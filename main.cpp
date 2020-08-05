@@ -74,8 +74,8 @@ void variableDeclarations()
     double filterBandwidth = 1.8999292;
 
     char sampleBank = 'A';
-    char ampersand = 38;
-    char question = 63;
+    char ampersand = '&';
+    char question = '?';
 
     unsigned int tableLength = 3002;
     unsigned int tableHeight = 700;
@@ -168,10 +168,9 @@ double modulation(float lfoRate, float lfoAmount, bool tremolo = true, bool vibr
 /*
  10)
  */
-char myInitials(char firstName, char lastName = 71)
+void envShape(float attack, float release = 3.2f)
 {
-    ignoreUnused(firstName, lastName);
-    return {};
+    ignoreUnused(attack, release);
 }
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -193,27 +192,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    numberOfBirds(2, true);
+    auto birdsCounted = numberOfBirds(4, true);
     //2)
-    frequencyRange(75.5f, 600.33f);
+    auto bandWidth = frequencyRange(75.5f, 600.33f);
     //3)
-    eatBeforeLunch(13.0f, true);
+    auto ShouldIeat = eatBeforeLunch(13.0f, true);
     //4)
-    reverbTime(3.4, 2.1);
+    auto irPlusDry = reverbTime(3.4, 2.1);
     //5)
-    boilAnEgg(504.3f, true);
+    auto eggCooked = boilAnEgg(504.3f, true);
     //6)
-    spaceOnTrain(40, 29);
+    auto peopleOnTrain = spaceOnTrain(40, 29);
     //7)
-    bpm(true, 112.3f, 4);
+    auto performerInput = bpm(true, 112.3f, 4);
     //8)
-    waterPlants(false, 4);
+    auto shouldIWater = waterPlants(false, 4);
     //9)
-    modulation(5.32f, 0.3232f);
+    auto modType = modulation(5.32f, 0.3232f);
     //10)
-    myInitials(66);
+    envShape(1.2f);
     
-    ignoreUnused(carRented, numberOfBirds, frequencyRange, eatBeforeLunch, reverbTime, boilAnEgg, spaceOnTrain, bpm, waterPlants, modulation, myInitials);
+    ignoreUnused(carRented, birdsCounted, bandWidth, ShouldIeat, irPlusDry, eggCooked, peopleOnTrain, performerInput, shouldIWater, modType);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
