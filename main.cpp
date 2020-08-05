@@ -16,13 +16,13 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ bool
+ double
+ char
+ unsigned int
+ void
  
  
  
@@ -57,9 +57,31 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
     
+    int carrots = 4;
+    int potatoes = 6;
+    int onions = 2;
+
+    float time = 1.3f;
+    float bar = 4.6f;
+    float loopLength = 9.2f;
+
+    bool channelOn = true;
+    bool panFullyLeft = true;
+    bool channelLevelFull = true;
     
+    double filterFrequency = 40.5669593;
+    double filterResonance = 1.5552231;
+    double filterBandwidth = 1.8999292;
+
+    char sampleBank = 'A';
+    char ampersand = '&';
+    char question = '?';
+
+    unsigned int tableLength = 3002;
+    unsigned int tableHeight = 700;
+    unsigned int tableWidth = 1002;
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, carrots, potatoes, onions, time, bar, loopLength, channelOn, panFullyLeft, channelLevelFull, filterFrequency, filterResonance, filterBandwidth, sampleBank, ampersand, question, tableLength, tableHeight, tableWidth); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
@@ -74,43 +96,82 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
-
+int numberOfBirds(int sparrows, int starlings = 5, bool darkOutside = false)  
+{ 
+    ignoreUnused(sparrows, starlings, darkOutside); 
+    return {}; 
+} 
 /*
  2)
  */
-
+float frequencyRange(float vocalLow, float vocalHigh, float hiHatHigh = 8000.2f)
+{
+    ignoreUnused(vocalLow, vocalHigh, hiHatHigh);
+    return {};
+}
 /*
  3)
  */
-
+bool eatBeforeLunch(float time, bool hungry, float timePast = 2.3f)
+{
+    ignoreUnused(time, hungry, timePast);
+    return {};
+}
 /*
  4)
  */
-
+double reverbTime(double impulseTime, double drySignal, bool convolve = true)
+{
+    ignoreUnused(impulseTime, drySignal, convolve);
+    return {};
+}
 /*
  5)
  */
-
+char boilAnEgg(float timeWaterBoil, bool cookerOn)
+{
+    ignoreUnused(timeWaterBoil, cookerOn);
+    return {};
+}
 /*
  6)
  */
-
+int spaceOnTrain(int ticketsSold, int seatsAvailable, bool moreThanOneStop = true)
+{
+    ignoreUnused(ticketsSold, seatsAvailable, moreThanOneStop);
+    return {};
+}
 /*
  7)
  */
-
+float bpm(bool keyPressed, float timesPerSec, int bars)
+{
+    ignoreUnused(keyPressed, timesPerSec, bars);
+    return {};
+}
 /*
  8)
  */
-
+bool waterPlants(bool tempHot, int hoursLastWatered)
+{
+    ignoreUnused(tempHot, hoursLastWatered);
+    return {};
+}
 /*
  9)
  */
-
+double modulation(float lfoRate, float lfoAmount, bool tremolo = true, bool vibrato = false)
+{
+    ignoreUnused(lfoRate, lfoAmount, tremolo, vibrato);
+    return {};
+}
 /*
  10)
  */
-
+void envShape(float attack, float release = 3.2f)
+{
+    ignoreUnused(attack, release);
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -131,27 +192,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    auto birdsCounted = numberOfBirds(4, true);
     //2)
-    
+    auto bandWidth = frequencyRange(75.5f, 600.33f);
     //3)
-    
+    auto ShouldIeat = eatBeforeLunch(13.0f, true);
     //4)
-    
+    auto irPlusDry = reverbTime(3.4, 2.1);
     //5)
-    
+    auto eggCooked = boilAnEgg(504.3f, true);
     //6)
-    
+    auto peopleOnTrain = spaceOnTrain(40, 29);
     //7)
-    
+    auto performerInput = bpm(true, 112.3f, 4);
     //8)
-    
+    auto shouldIWater = waterPlants(false, 4);
     //9)
-    
+    auto modType = modulation(5.32f, 0.3232f);
     //10)
+    envShape(1.2f);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, birdsCounted, bandWidth, ShouldIeat, irPlusDry, eggCooked, peopleOnTrain, performerInput, shouldIWater, modType);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
